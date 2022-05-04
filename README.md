@@ -5,20 +5,21 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* 檢視 -> 命令選擇區，選擇 `Remote Container: Reopen in Container` ，選擇`From 'Dockerfile'`
 
-* System dependencies
+* 進入 XFastest_Technical_Examination
+```
+cd XFastest_Technical_Examination
+```
 
-* Configuration
+```
+rails s
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 開另一個 terminal，進入 XFastest_Technical_Examination
+```
+cd XFastest_Technical_Examination
+```
+```
+bin/webpack-dev-server
+```
