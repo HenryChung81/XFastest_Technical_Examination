@@ -1,2 +1,18 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
+<h1>Blogs List</h1>
+
+<%= link_to 'new blog', new_blog_path %>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @blogs.each do |blog| %>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= blog.name %></h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
