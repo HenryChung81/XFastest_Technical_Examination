@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_05_082049) do
+ActiveRecord::Schema.define(version: 2022_05_07_045223) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_blogs_on_deleted_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
