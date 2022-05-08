@@ -1,4 +1,4 @@
-<%= form_with model: Article.new, url: blog_articles_path(blog), remote: true do |form| %>
+<%= form_with(model: [blog, article])  do |form| %>
   <%= form.label :title, '標題', class: 'form-label' %>
   <%= form.text_field :title, class: 'form-control mb-2' %>
 
