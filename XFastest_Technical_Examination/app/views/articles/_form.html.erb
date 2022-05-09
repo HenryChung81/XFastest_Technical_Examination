@@ -6,6 +6,10 @@
 
 
 <%= form_with(model: [blog, article])  do |form| %>
+  <%= image_tag article.cover_image.variant(resize: '1000X800'), style: 'display: block;' if article.cover_image.attached? %>
+  <%= form.label :cover_image, '封面圖', class: 'form-label' %>
+  <%= form.file_field :cover_image, class: 'form-control mb-2' %>
+
   <%= form.label :title, '標題', class: 'form-label' %>
   <%= form.text_field :title, class: 'form-control mb-2' %>
 

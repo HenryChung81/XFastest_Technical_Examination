@@ -3,11 +3,16 @@ class Article < ApplicationRecord
 
   include AASM
 
-  belongs_to :user
-  belongs_to :blog
-
+  # validations
   validates :title, presence: true
 
+  # relationships
+  belongs_to :user
+  belongs_to :blog
+  has_one_attached :cover_image
+
+
+  # instance methods
   aasm(column: 'status', no_direct_assignment: true) do
     state :draft, initial: true
     state :published
