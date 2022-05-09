@@ -9,7 +9,7 @@
           <p class="card-text">
             最後編輯時間:  <%= time_ago_in_words(blog.updated_at) %>
           </p>
-          <%= link_to 'articles', blog_path(blog), class:'btn btn-primary' %>
+          <%= link_to 'articles', blog_articles_path(blog), class:'btn btn-primary' %>
           <%= link_to edit_blog_path(blog), class:'btn btn-secondary' do %>
           <i class="fa-solid fa-pen-to-square"></i>
           <% end %>

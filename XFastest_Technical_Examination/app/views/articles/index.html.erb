@@ -1,0 +1,25 @@
+<h1 class="mb-3">Articles</h1>
+
+<%= link_to 'new article', new_blog_article_path, class:'btn btn-primary mb-3' %>
+
+<% @articles.each do |article| %>
+<div class="container">
+  <h2>
+    <%= link_to article.title, edit_blog_article_path(@blog, article),  class:'text-dark', style: 'text-decoration: none;' %>
+    <%= content_tag :span, 'publish', class: 'btn btn-sm btn-success' if article.published? %>
+  </h2>
+  <p>
+    <%= article.content %>
+  </p>
+  <p>
+    最後編輯時間: <%= time_ago_in_words(article.updated_at) %>
+    <%= link_to edit_blog_article_path(@blog, article), class:'btn btn-secondary' do %>
+    <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
+    <%= link_to blog_article_path(@blog, article), class:'btn btn-danger', method: 'delete' , data: {confirm: '確定刪除?' } do %>
+    <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+    </p>
+  </div>
+  <hr>
+<% end %>
