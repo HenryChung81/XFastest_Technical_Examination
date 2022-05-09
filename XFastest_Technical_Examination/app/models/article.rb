@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
   acts_as_paranoid
 
+  has_rich_text :action_content
+
   include AASM
 
   # validations

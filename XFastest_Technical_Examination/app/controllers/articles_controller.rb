@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :find_article , only: [:edit, :update, :destroy ]
 
   def index
-    @articles = @blog.articles.order(created_at: :desc)
+    @articles = @blog.articles.order(created_at: :desc).includes(:blog)
   end
 
   def new
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :cover_image)
+    params.require(:article).permit(:title, :action_content, :cover_image)
   end
   
 end

@@ -13,8 +13,8 @@
   <%= form.label :title, '標題', class: 'form-label' %>
   <%= form.text_field :title, class: 'form-control mb-2' %>
 
-  <%= form.label :content, '內容', class: 'form-label' %>
-  <%= form.text_area :content, rows:10, class: 'form-control form-control-lg mb-2' %>
+  <%= form.label :action_content, '內容', class: 'form-label' %>
+  <%= form.rich_text_area :action_content, rows:20, class: 'form-control mb-2 height', style: 'min-height: 15em;' %>
 
 <% if article.published? %>
     <%= form.submit '更新', name: 'save_as_draft', class: 'btn btn-primary' %>
