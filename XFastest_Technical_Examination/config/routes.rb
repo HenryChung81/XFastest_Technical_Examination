@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/index'
   get 'articles/index'
   devise_for :users
   # get 'blogs/index'
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   end
   
   
-  root to: "blogs#index"
+  root to: "pages#index"
 end
