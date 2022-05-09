@@ -6,7 +6,7 @@
 <div class="container">
   <h2>
     <%= link_to article.title, edit_blog_article_path(@blog, article),  class:'text-dark', style: 'text-decoration: none;' %>
-    <%= content_tag :span, 'public', class: 'btn btn-sm btn-success' if article.status == 'published' %>
+    <%= content_tag :span, 'publish', class: 'btn btn-sm btn-success' if article.published? %>
   </h2>
   <p>
     <%= article.content %>
