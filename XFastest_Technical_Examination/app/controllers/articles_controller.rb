@@ -11,12 +11,22 @@ class ArticlesController < ApplicationController
     @article = @blog.articles.new
   end
 
+  def show
+    
+  end
+
   def create
     @article = @blog.articles.new(article_params)
+    @article.status = 'published' if params[:publish]
     @article.user = current_user
 
-    if @article.save 
-      redirect_to blog_articles_path, notice: '新增成功'
+    if @article.save
+      if params[:publish]
+        redirect_to blog_articles_path, notice: '文章已發佈'
+      else
+        # redirect_to edit_blog_article_path(@blog, @article), notice: '文章已儲存'
+        redirect_to blog_articles_path, notice: '文章已儲存'
+      end
     else
       render :new
     end
@@ -26,8 +36,9 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
     if @article.update(article_params)
-      redirect_to blog_articles_path, notice: '更新成功'
+        redirect_to edit_blog_article_path(@blog, @article), notice: '文章已儲存'
     else
       redner :edit
     end
@@ -35,7 +46,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to blog_articles_path, notice: 'article 已刪除'
+    redirect_to blog_articles_path, notice: '文章已刪除'
   end
 
   private

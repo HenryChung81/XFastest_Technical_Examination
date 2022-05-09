@@ -5,6 +5,6 @@
   <%= form.label :content, '內容', class: 'form-label' %>
   <%= form.text_area :content, rows:10, class: 'form-control form-control-lg mb-2' %>
 
-  <%= form.submit '儲存草稿', class: 'btn btn-primary' %>
-  <%= form.submit '發佈文章', class: 'btn btn-success' %>
+  <%= form.submit '儲存草稿', name: 'save_as_draft', class: 'btn btn-primary' %>
+  <%= form.submit '發佈文章', name: 'publish', class: 'btn btn-success' %>
 <% end %>

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_05_07_070709) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.string "status", default: "private"
+    t.string "status", default: "draft"
     t.integer "user_id", null: false
     t.integer "blog_id", null: false
     t.datetime "deleted_at"
