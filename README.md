@@ -21,5 +21,11 @@ rails s
 cd XFastest_Technical_Examination
 ```
 ```
+yarn
+```
+```
+rails db:migrate
+```
+```
 bin/webpack-dev-server
 ```
