@@ -30,9 +30,9 @@ rails db:migrate
 ```
 rails db:seed
 ```
-> email: XFastest@gmail.com
-> password: 123zxc
-> 後台路徑: http://localhost:3000/XFastestAdmin
+* email: XFastest@gmail.com
+* password: 123zxc
+* 後台路徑: http://localhost:3000/XFastestAdmin
 
 ```
 bin/webpack-dev-server
