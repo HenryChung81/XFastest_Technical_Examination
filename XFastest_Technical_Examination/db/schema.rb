@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_09_151413) do
+ActiveRecord::Schema.define(version: 2022_05_09_235746) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 2022_05_09_151413) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
+    t.boolean "is_admin", default: false, null: false
+    t.boolean "is_blog_manager", default: false, null: false
     t.index ["deleted_at"], name: "index_blogs_on_deleted_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end

@@ -3,7 +3,6 @@
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <% @blogs.each do |blog| %>
     <div class="col">
-    <% if blog.user.is_blog_manager %>
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= blog.name %></h5>
@@ -16,7 +15,6 @@
           <%= link_to 'articles', blog_articles_path(blog), class:'btn btn-primary' %>
         </div>
       </div>
-      <% end %>
     </div>
   <% end %>
 </div>

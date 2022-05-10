@@ -13,6 +13,8 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_user.blogs.new(blog_params)
+    @blog.is_blog_manager = current_user.is_blog_manager
+    @blog.is_admin = current_user.is_admin
 
     if @blog.save
       redirect_to blogs_path, notice: '新增成功'
