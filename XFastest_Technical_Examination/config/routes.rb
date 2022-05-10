@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/XFastestAdmin', as: 'rails_admin'
   get 'articles/index'
   devise_for :users
   # get 'blogs/index'
