@@ -9,7 +9,7 @@
     <%= content_tag :span, 'publish', class: 'btn btn-sm btn-success' if article.published? %>
   </h2>
   <p>
-    <%= article.content %>
+    <%= strip_tags(article.action_content.to_s).truncate(30) %>
   </p>
   <p>
     最後編輯時間: <%= time_ago_in_words(article.updated_at) %>

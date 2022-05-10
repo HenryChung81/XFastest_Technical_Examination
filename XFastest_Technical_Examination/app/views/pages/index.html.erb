@@ -9,10 +9,7 @@
           <p class="card-text">
             最後編輯時間:  <%= time_ago_in_words(blog.updated_at) %>
           </p>
-          <p class="card-text">
-            is_blog_manager  <%= blog.user.is_blog_manager %>
-          </p>
-          <%= link_to 'articles', blog_articles_path(blog), class:'btn btn-primary' %>
+          <%= link_to 'articles', blog_articles_page_path(blog), class:'btn btn-primary' %>
         </div>
       </div>
     </div>

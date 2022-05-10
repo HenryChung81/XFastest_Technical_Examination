@@ -1,0 +1,31 @@
+<h1 class="mb-3">Articles</h1>
+
+<% @articles.each do |article| %>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-2">
+    <h2>
+      <%= link_to article.title, show_blog_article_path(@blog, article),  class:'text-dark', style: 'text-decoration: none;' %>
+    </h2>
+    <p>
+      <%= strip_tags(article.action_content.to_s).truncate(30) %>
+      
+    </p>
+    <p>
+      edited: <%= time_ago_in_words(article.updated_at) %>
+    </p>
+
+  
+    </div>
+    <div class="col-2">
+      <%= image_tag article.cover_image.variant(resize: '150X100' ), style: 'display: block;' if article.cover_image.attached?
+    %>
+    </div>
+  </div>
+
+
+
+
+  </div>
+  <hr>
+<% end %>

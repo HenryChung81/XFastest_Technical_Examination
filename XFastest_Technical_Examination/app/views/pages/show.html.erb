@@ -1,0 +1,14 @@
+<div class="row justify-content-center mt-5">
+  <div class="card" style="width: 40rem;">
+  <%= image_tag @article.cover_image.variant(resize: '1000X800' ), style: 'display: block;' if
+    @article.cover_image.attached? %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= @article.title %>
+      </h5>
+      <p class="card-text">
+        <%= @article.action_content %>
+      </p>
+    </div>
+  </div>
+</div>

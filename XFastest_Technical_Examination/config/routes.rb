@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/index'
   get 'articles/index'
   devise_for :users
   # get 'blogs/index'
@@ -7,6 +6,10 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :articles
   end
+
+  get 'page/:blog_id/articles', to: 'pages#articles', as: 'blog_articles_page'
+  get 'page/:blog_id/article/:article_id', to: 'pages#show', as: 'show_blog_article'
+
   
   
   root to: "pages#index"
