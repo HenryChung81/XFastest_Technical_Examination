@@ -26,6 +26,14 @@ yarn
 ```
 rails db:migrate
 ```
+* 產生管理員帳號
+```
+rails db:seed
+```
+> email: XFastest@gmail.com
+> password: 123zxc
+> 後台路徑: http://localhost:3000/XFastestAdmin
+
 ```
 bin/webpack-dev-server
 ```
